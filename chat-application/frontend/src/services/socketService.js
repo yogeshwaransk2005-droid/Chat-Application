@@ -22,7 +22,7 @@ export const connectSocket = (
 
   stompClient = new Client({
     webSocketFactory: () =>
-      new SockJS("http://localhost:8080/chat"),
+      new SockJS("https://chat-application-gmdg.onrender.com/chat"),
 
     reconnectDelay: 5000,
 
