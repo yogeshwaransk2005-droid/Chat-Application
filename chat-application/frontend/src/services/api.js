@@ -1,7 +1,9 @@
 import axios from "axios";
 
+const API_BASE_URL = "https://chat-application-gmdg.onrender.com/api";
+
 const API = axios.create({
-  baseURL: "http://localhost:8080/api",
+  baseURL: API_BASE_URL,
   headers: {
     "Content-Type": "application/json"
   }
@@ -64,12 +66,13 @@ export const sendMessage = async (payload) => {
 
 export const uploadFile = async (formData, token) => {
   const upload = axios.create({
-    baseURL: "http://localhost:8080/api/files",
+    baseURL: `${API_BASE_URL}/files`,
     headers: {
       Authorization: token ? `Bearer ${token}` : undefined,
       "Content-Type": "multipart/form-data"
     }
   });
+
   const response = await upload.post("/upload", formData);
   return response.data;
 };
