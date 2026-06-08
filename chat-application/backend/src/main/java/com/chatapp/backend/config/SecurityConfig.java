@@ -39,14 +39,15 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 
                         .requestMatchers(
-                                "/",
-                                "/api/auth/**",
-                                "/api/messages/**",
-                                "/auth/**",
-                                "/chat/**",
-                                "/ws/**",
-                                "/error"
-                        ).permitAll()
+        "/",
+        "/actuator/**",
+        "/api/auth/**",
+        "/api/messages/**",
+        "/auth/**",
+        "/chat/**",
+        "/ws/**",
+        "/error"
+).permitAll()
 
                         .anyRequest().authenticated()
                 )
