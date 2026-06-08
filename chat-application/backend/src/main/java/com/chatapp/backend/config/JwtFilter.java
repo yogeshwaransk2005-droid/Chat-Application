@@ -36,7 +36,7 @@ public class JwtFilter extends OncePerRequestFilter {
         String authHeader = request.getHeader("Authorization");
 
         System.out.println("PATH = " + request.getServletPath());
-        System.out.println("AUTH HEADER = " + request.getHeader("Authorization"));
+        System.out.println("AUTH HEADER = " + authHeader);
 
         String token = null;
 
@@ -80,7 +80,12 @@ public class JwtFilter extends OncePerRequestFilter {
 
         String path = request.getServletPath();
 
+        System.out.println("FILTER PATH = " + path);
+
         return path.startsWith("/api/auth/")
-                || path.startsWith("/ws");
+                || path.startsWith("/chat")
+                || path.startsWith("/ws")
+                || path.startsWith("/error")
+                || path.equals("/");
     }
 }
