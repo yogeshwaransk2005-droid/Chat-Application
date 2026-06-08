@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #111b21;
+}
+
+.chat-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0b141a;
+}
+
+.chat-header {
+  background: #202c33;
+  color: white;
+  padding: 18px 25px;
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 1px solid #2f3b43;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background: #0b141a;
+}
+
+.message {
+  max-width: 320px;
+  padding: 10px 14px 18px 14px;
+  position: relative;
+}
+
+.message-footer {
+  position: absolute;
+  bottom: 3px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.message-status {
+  font-size: 8px;
+  color: #94a3b8;
+}
+
+.message-status.read {
+  color: #38bdf8;
+}
+
+.message-time {
+  font-size: 8px;
+  color: #94a3b8;
+  opacity: 0.8;
+}
+.sent {
+  align-self: flex-end;
+  background: #005c4b;
+  border-top-right-radius: 0;
+}
+
+.received {
+  align-self: flex-start;
+  background: #202c33;
+  border-top-left-radius: 0;
+}
+
+.sender {
+  font-size: 12px;
+  margin-bottom: 5px;
+  color: #aebac1;
+}
+
+.chat-input-area {
+  display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 15px;
+    background: #203040;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  background: #2a3942;
+  color: white;
+  font-size: 15px;
+}
+
+.chat-input::placeholder {
+  color: #aebac1;
+}
+
+.send-btn {
+  margin-left: 12px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 50px;
+  background: #00a884;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.send-btn:hover {
+  background: #019874;
+}
+
+.chat-box::-webkit-scrollbar {
+  width: 5px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background: #2a3942;
+  border-radius: 10px;
+}
+
+.emoji-btn {
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: transparent;
+
+    font-size: 24px;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+}
